@@ -7,6 +7,7 @@ import {
   TablePagination,
   Paper
 } from '@material-ui/core'
+import { Snackbar } from '@material-ui/core'
 
 import { Wrapper } from './Table/Wrapper'
 import { Header } from './Table/Header'
@@ -44,6 +45,16 @@ const Users = ({ users: { data } }) => {
     setOrderBy(property)
   }
 
+  const [open, setOpen] = useState(false)
+  const [message, setMessage] = useState('')
+  const handleOpen = (message) => {
+    setMessage(message)
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setOpen(false)
+  }
+
   const bodyProps = {
     page,
     rowsPerPage,
@@ -51,7 +62,8 @@ const Users = ({ users: { data } }) => {
     stableSort,
     getComparator,
     order,
-    orderBy
+    orderBy,
+    handleOpen
   }
 
   const headerProps = {
@@ -78,6 +90,13 @@ const Users = ({ users: { data } }) => {
         component="div"
       />
       <DownloadCSV data={data} />
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={open}
+        onClose={handleClose}
+        autoHideDuration={2000}
+        message={message}
+      />
     </Wrapper>
   ) : (
     <div />

@@ -2,9 +2,9 @@ export const exportCSV = (data) => {
   return data.map((el) => {
     return {
       Id: el.id,
-      Name: el.name,
-      Year: el.year,
-      Color: el.color
+      Email: el.email,
+      'First Name': el.first_name,
+      'Last Name': el.last_name
     }
   })
 }

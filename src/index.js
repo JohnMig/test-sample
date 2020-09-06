@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 
 import App from './App'
 import { store } from './store/store'
-import { getUsers } from './store//actions/userActions'
+import { getUsers } from './store//actions/userAction'
 
 import './index.css'
 

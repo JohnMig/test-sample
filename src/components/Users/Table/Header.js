@@ -14,9 +14,9 @@ export const Header = ({ order, orderBy, onRequestSort }) => {
 
   const headCells = [
     { id: 'id', numeric: true, disablePadding: true, label: 'Id' },
-    { id: 'name', numeric: false, disablePadding: false, label: 'Name' },
-    { id: 'year', numeric: true, disablePadding: false, label: 'Year' },
-    { id: 'color', numeric: false, disablePadding: false, label: 'Color' }
+    { id: 'email', numeric: false, disablePadding: false, label: 'Email' },
+    { id: 'first', numeric: false, disablePadding: false, label: 'First Name' },
+    { id: 'last', numeric: false, disablePadding: false, label: 'Last Name' }
   ]
 
   return (

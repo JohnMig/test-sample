@@ -6,7 +6,6 @@ import {
   Box,
   Typography
 } from '@material-ui/core'
-import Faker from 'faker'
 import PropTypes from 'prop-types'
 
 const cellStyles = {
@@ -14,7 +13,7 @@ const cellStyles = {
   paddingTop: 0
 }
 
-export const Avatar = ({ open }) => {
+export const Avatar = ({ open, avatar }) => {
   return (
     <TableRow>
       <TableCell style={cellStyles} colSpan={5}>
@@ -23,7 +22,7 @@ export const Avatar = ({ open }) => {
             <Typography variant="h6" gutterBottom component="div">
               Avatar
             </Typography>
-            <p>{Faker.image.avatar()}</p>
+            <p>{avatar}</p> {/* Faker has been removed. Sorry for that. */}
           </Box>
         </Collapse>
       </TableCell>
